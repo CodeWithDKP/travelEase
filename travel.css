@@ -1,0 +1,14 @@
+/*hero
+.bg-dark{
+    background-image: url('https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg');
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 15rem;
+   text-align: center;
+}       */
+ /* package*/      
+ .card-img-top{
+    height: 15rem;
+    width: auto;
+    
+ }
