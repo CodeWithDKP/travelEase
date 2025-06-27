@@ -13,31 +13,47 @@
 <body>
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">TravelEase</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="packages.html">Packages</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">TravelEase</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end bg-primary text-white" tabindex="-1" id="offcanvasNavbar">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close btn-close-blue text-reset" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link  active" href="packages.html">Packages</a></li>
+          <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
 
-  <section class="text-white text-center py-5"
-    style="background-image: url('https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg'); background-size: cover; background-position: center;">
-    <div class="container">
+  <section class="text-white text-center position-relative" 
+  style="background-image: url('https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg'); background-size: cover; background-position: center; height: 75vh;">
+
+  <!-- Overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" 
+       style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+  <!-- Content -->
+  <div class="container h-100 d-flex justify-content-center align-items-center position-relative" style="z-index: 2;">
+    <div>
       <h1 class="display-4 fw-bold">Travel Packages</h1>
       <p class="lead">Choose your perfect trip from our curated packages</p>
     </div>
-  </section>
+  </div>
+
+</section>
+
 
 
   <section class="py-5">
