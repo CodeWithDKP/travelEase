@@ -11,71 +11,64 @@
 </head>
 
 <body>
-
-
-   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">TravelEase</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end bg-primary text-white" tabindex="-1" id="offcanvasNavbar">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Menu</h5>
-        <button type="button" class="btn-close btn-close-blue text-reset" data-bs-dismiss="offcanvas"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link  active" href="packages.html">Packages</a></li>
-          <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
-        </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TravelEase</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end bg-primary text-white" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Menu</h5>
+          <button type="button" class="btn-close btn-close-blue text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="packages.html">Packages</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-
-  <section class="text-white text-center position-relative" 
-  style="background-image: url('https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg'); background-size: cover; background-position: center; height: 75vh;">
-
-  <!-- Overlay -->
-  <div class="position-absolute top-0 start-0 w-100 h-100" 
-       style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
-
-  <!-- Content -->
-  <div class="container h-100 d-flex justify-content-center align-items-center position-relative" style="z-index: 2;">
-    <div>
-      <h1 class="display-4 fw-bold">Travel Packages</h1>
-      <p class="lead">Choose your perfect trip from our curated packages</p>
+  <!-- Hero Slideshow -->
+  <section id="hero-slideshow" class="text-white text-center position-relative"
+    style="background-image: url('https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg'); background-size: cover; background-position: center; height: 75vh; transition: background-image 1s ease-in-out;">
+    <div class="position-absolute top-0 start-0 w-100 h-100"
+      style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    <div class="container h-100 d-flex justify-content-center align-items-center position-relative" style="z-index: 2;">
+      <div>
+        <h1 class="display-4 fw-bold">Travel Packages</h1>
+        <p class="lead">Choose your perfect trip from our curated packages</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-</section>
-
-
-
+  <!-- Packages -->
   <section class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">Top Destinations</h2>
       <div class="row g-4">
 
-
+        <!-- Package Card -->
         <div class="col-md-4">
           <div class="card h-100 shadow">
-            <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg" class="card-img-top"
-              alt="Manali">
+            <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg" class="card-img-top" alt="Manali">
             <div class="card-body">
               <h5 class="card-title">Manali Retreat</h5>
               <p class="card-text">5 Days / 4 Nights | ₹15,999</p>
               <p>Enjoy the serene hills, snow-capped peaks, and adventure activities.</p>
-              <a href="#" class="btn btn-outline-primary">Book Now</a>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal"
+                data-destination="Manali Retreat">Book Now</button>
             </div>
           </div>
         </div>
 
-
+        <!-- Repeat for all packages -->
         <div class="col-md-4">
           <div class="card h-100 shadow">
             <img src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg" class="card-img-top" alt="Goa">
@@ -83,63 +76,64 @@
               <h5 class="card-title">Goa Beach Tour</h5>
               <p class="card-text">4 Days / 3 Nights | ₹12,499</p>
               <p>Relax on sunny beaches, enjoy nightlife, and explore Portuguese heritage.</p>
-              <a href="#" class="btn btn-outline-primary">Book Now</a>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal"
+                data-destination="Goa Beach Tour">Book Now</button>
             </div>
           </div>
         </div>
 
-
+        <!-- Kerala -->
         <div class="col-md-4">
           <div class="card h-100 shadow">
-            <img src="https://images.pexels.com/photos/416676/pexels-photo-416676.jpeg" class="card-img-top"
-              alt="Kerala">
+            <img src="https://images.pexels.com/photos/416676/pexels-photo-416676.jpeg" class="card-img-top" alt="Kerala">
             <div class="card-body">
               <h5 class="card-title">Kerala Backwaters</h5>
               <p class="card-text">6 Days / 5 Nights | ₹18,999</p>
               <p>Stay in houseboats, visit tea plantations, and enjoy local cuisine.</p>
-              <a href="#" class="btn btn-outline-primary">Book Now</a>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal"
+                data-destination="Kerala Backwaters">Book Now</button>
             </div>
           </div>
         </div>
 
-
+        <!-- Dubai -->
         <div class="col-md-4">
           <div class="card h-100 shadow">
-            <img src="https://images.pexels.com/photos/2422466/pexels-photo-2422466.jpeg" class="card-img-top"
-              alt="Dubai">
+            <img src="https://images.pexels.com/photos/2422466/pexels-photo-2422466.jpeg" class="card-img-top" alt="Dubai">
             <div class="card-body">
               <h5 class="card-title">Dubai Explorer</h5>
               <p class="card-text">5 Days / 4 Nights | ₹49,999</p>
               <p>Visit Burj Khalifa, Desert Safari, and shop in the best malls.</p>
-              <a href="#" class="btn btn-outline-primary">Book Now</a>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal"
+                data-destination="Dubai Explorer">Book Now</button>
             </div>
           </div>
         </div>
 
-
+        <!-- Paris -->
         <div class="col-md-4">
           <div class="card h-100 shadow">
-            <img src="https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg" class="card-img-top"
-              alt="Paris">
+            <img src="https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg" class="card-img-top" alt="Paris">
             <div class="card-body">
               <h5 class="card-title">Romantic Paris</h5>
               <p class="card-text">6 Days / 5 Nights | ₹85,000</p>
               <p>Eiffel Tower, Seine River cruise, and beautiful French culture.</p>
-              <a href="#" class="btn btn-outline-primary">Book Now</a>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal"
+                data-destination="Romantic Paris">Book Now</button>
             </div>
           </div>
         </div>
 
-
+        <!-- Bali -->
         <div class="col-md-4">
           <div class="card h-100 shadow">
-            <img src="https://images.pexels.com/photos/3581913/pexels-photo-3581913.jpeg" class="card-img-top"
-              alt="Bali">
+            <img src="https://images.pexels.com/photos/3581913/pexels-photo-3581913.jpeg" class="card-img-top" alt="Bali">
             <div class="card-body">
               <h5 class="card-title">Bali Getaway</h5>
               <p class="card-text">7 Days / 6 Nights | ₹55,000</p>
               <p>Temples, rice terraces, beaches, and luxury villas await you.</p>
-              <a href="#" class="btn btn-outline-primary">Book Now</a>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bookingModal"
+                data-destination="Bali Getaway">Book Now</button>
             </div>
           </div>
         </div>
@@ -148,7 +142,44 @@
     </div>
   </section>
 
+  <!-- Booking Modal (same as index) -->
+  <div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light rounded-4 shadow-lg">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Book Your Trip</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="bookingForm">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control booking-input" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control booking-input" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Destination</label>
+              <input type="text" class="form-control booking-input" id="destinationInput" readonly>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control booking-input" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Guests</label>
+              <input type="number" class="form-control booking-input" min="1" max="20" required>
+            </div>
+            <button type="submit" class="btn btn-ocean w-100">Confirm Booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-4 mt-5">
     <div class="container">
       <p class="mb-2">&copy; 2025 TravelEase. All rights reserved.</p>
@@ -161,7 +192,26 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+
+  <!-- Slideshow script -->
+  <script>
+    const bgImages = [
+      "https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg",
+      "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
+      "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg",
+      "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg"
+    ];
+
+    let current = 0;
+    const section = document.getElementById("hero-slideshow");
+
+    setInterval(() => {
+      current = (current + 1) % bgImages.length;
+      section.style.backgroundImage = `url('${bgImages[current]}')`;
+    }, 5000);
+  </script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

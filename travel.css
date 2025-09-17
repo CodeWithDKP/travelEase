@@ -1,57 +1,52 @@
- /*hero*/
- .btn-ocean {
-  background: linear-gradient(to right, #0066ff, #0099ff);
-  color: white;
-  border: none;
-}
-.btn-ocean:hover {
-  background: linear-gradient(to right, #0052cc, #007acc);
-  color: #fff;
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #f8f8f8;
+  scroll-behavior: smooth;
 }
 
- /* package*/      
- .card-img-top{
-    height: 15rem;
-    width: auto;
-    
- }
-.carousel-item .img-fluid{
-  height: 30rem;
-   width: 100rem;
- }
- .offcanvas .btn-close {
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: rgb(63, 37, 255);
-    opacity: 1;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    border-radius: 20%;
-    padding: 0.5rem ;
-  }
-
-  .offcanvas .btn-close:hover {
-    background-color: #5303ff;
-    opacity: 0.8;
-  }
-  .hero-title {
-  max-width: 900px;
-  margin: 0 auto;
+/* ===== Navbar ===== */
+.navbar {
+  background: linear-gradient(90deg, #1a1a1a, #111111);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
 }
+
+.navbar .nav-link {
+  color: #f8f8f8;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #00d4ff;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #00d4ff !important;
+}
+
+/* ===== Hero Section ===== */
 .hero-video-section {
   position: relative;
-  height: 76vh;
+  height: 73vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .video-bg {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.5) blur(1px);
+  animation: zoomPan 20s infinite alternate;
   z-index: 1;
 }
 
@@ -61,7 +56,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
 
@@ -69,47 +64,641 @@
   position: relative;
   z-index: 3;
   max-width: 900px;
-  padding: 0 1rem;
+  padding: 1rem;
+  animation: fadeUp 2s ease forwards;
 }
 
 .hero-title {
-  white-space: normal;
-  word-break: break-word;
-  line-height: 1;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #00d4ff;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 1.3rem;
-    line-height: 1.4;
+.hero-text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-ocean {
+  background: linear-gradient(90deg, #00d4ff, #0066ff);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-ocean:hover {
+  background: linear-gradient(90deg, #0066ff, #00d4ff);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00d4ff;
+}
+
+/* ===== Carousel ===== */
+
+.carousel-section {
+  position: relative;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.carousel-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  /* dark overlay for readability */
+  z-index: 1;
+}
+
+#carousel-h2{
+  color: white;
+}
+
+.carousel-inner img {
+  border-radius: 15px;
+  transition: transform 0.5s ease;
+  object-fit: cover;
+  /* ensure image fits nicely */
+}
+
+.carousel-item .img-fluid {
+  height: 30rem;
+  /* 30rem height */
+  width: 120rem;
+  /* 120rem width */
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.05);
+}
+
+.carousel-caption {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 50, 0.6);
+  /* subtle dark-blue overlay */
+  border-radius: 15px;
+  animation: fadeUp 1s ease;
+  padding: 1rem;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+}
+
+.card-title {
+  color: #00d4ff;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #ccc;
+}
+
+section h2 {
+  color: #00d4ff;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #00d4ff;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+
+/* ===== Booking Modal ===== */
+.modal-content {
+  background: linear-gradient(135deg, #111, #222);
+  border-radius: 15px;
+  padding: 1rem;
+  animation: fadeUp 0.5s ease;
+}
+
+.booking-input {
+  background: #222;
+  color: #f8f8f8;
+  border: 1px solid #00d4ff;
+  border-radius: 10px;
+}
+
+.booking-input:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
+  outline: none;
+}
+
+.btn-close-white {
+  filter: invert(1);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  color: #ccc;
+}
+
+footer a {
+  color: #00d4ff;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #00fff0;
+}
+
+/* ===== Animations ===== */
+@keyframes zoomPan {
+  0% {
+    transform: scale(1) translate(0, 0);
   }
 
-  .video-bg {
-    object-fit: cover;
+  50% {
+    transform: scale(1.1) translate(-20px, -10px);
+  }
+
+  100% {
+    transform: scale(1) translate(0, 0);
   }
 }
 
-/*
-.hero-title {
-  max-width: 900px;
-  margin: 0 auto;
-  white-space: normal; 
-  word-break: break-word;
-  line-height: 1.3;
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero-title {
+    font-size: 2rem;
+  }
+
+  .carousel-caption h5 {
     font-size: 1rem;
-    line-height: 1.4;
-    padding: 0 1rem;
-
   }
 
-  .carousel-inner img {
-    height: 160px;
-    object-fit: cover;
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .btn-ocean {
+    padding: 0.6rem 1.5rem;
   }
 }
-  */
+
+
+
+
+
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: #f8f8f8;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #00d4ff !important;
+}
+
+.nav-link {
+  color: #f8f8f8;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #00d4ff !important;
+}
+
+/* ===== Hero Section ===== */
+#hero-slideshow {
+  position: relative;
+  height: 73vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-image 1s ease-in-out;
+  margin-bottom: -10px;
+}
+
+#hero-slideshow .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#hero-slideshow h1,
+#hero-slideshow p {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 1s ease forwards;
+}
+
+#hero-slideshow h1 {
+  font-size: 3rem;
+  color: #00d4ff;
+}
+
+#hero-slideshow p {
+  font-size: 1.2rem;
+}
+
+/* ===== Packages Cards ===== */
+.card {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  color: #00d4ff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: rgb(192, 189, 189);
+}
+
+.card-text {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* ===== Section Headings ===== */
+section h2 {
+  color: #00d4ff;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #00d4ff;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ===== Buttons ===== */
+.btn-ocean {
+  background: linear-gradient(90deg, #00d4ff, #0066ff);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-ocean:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 212, 255, 0.5);
+}
+
+/* ===== Modal ===== */
+.modal-content {
+  background: linear-gradient(135deg, #111, #222);
+  border-radius: 15px;
+  padding: 1rem;
+  color: #f8f8f8;
+}
+
+.modal-content input {
+  background: #222;
+  color: #f8f8f8;
+  border: 1px solid #00d4ff;
+  border-radius: 10px;
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer a {
+  color: #00d4ff;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #00fff0;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  #hero-slideshow h1 {
+    font-size: 2rem;
+  }
+
+  #hero-slideshow p {
+    font-size: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .btn-ocean {
+    padding: 0.6rem 1rem;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-img-top {
+    height: 150px;
+  }
+
+  #hero-slideshow h1 {
+    font-size: 1.6rem;
+  }
+
+  #hero-slideshow p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: #f8f8f8;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+p,
+li {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #00d4ff !important;
+}
+
+.nav-link {
+  color: #f8f8f8;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #00d4ff !important;
+}
+
+/* ===== Hero Section ===== */
+.contact-hero {
+  background: linear-gradient(135deg, #0066ff, #00d4ff);
+  color: white;
+  padding: 80px 0;
+  border-radius: 12px;
+  animation: fadeUp 1.2s ease;
+}
+
+.contact-hero h1 {
+  font-weight: 700;
+  color: white;
+}
+
+.contact-hero .lead-p {
+  font-size: 1.2rem;
+  color: black; /* Hero paragraph should be black */
+  margin-top: 10px;
+}
+
+/* ===== Contact Page Left Column (Info + Map) ===== */
+.contact-info {
+  background: #111;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+  margin-bottom: 2rem;
+}
+
+.contact-info h3, 
+.contact-info h4 {
+  color: #00d4ff;
+}
+
+.contact-info p {
+  color: #ccc;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p i {
+  margin-right: 0.5rem;
+  color: #00d4ff;
+  font-size: 1.2rem;
+}
+
+/* Map style */
+.contact-info .ratio {
+  margin-top: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.25);
+}
+
+
+/* ===== Form Styling (same as Contact Page) ===== */
+.styled-form {
+  background: #111;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+  padding-bottom: 137px;  
+}
+
+.styled-form .form-control {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #f8f8f8;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.styled-form .form-control:focus {
+  background: #1a1a1a;
+  border-color: #00d4ff;
+  color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+.styled-form .btn-ocean {
+  background: linear-gradient(90deg, #00d4ff, #0066ff);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 50px;
+  padding: 0.7rem 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+  
+}
+
+.styled-form .btn-ocean:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 212, 255, 0.5);
+}
+
+/* Form heading */
+.form-title {
+  color: #00d4ff;
+  margin-bottom: 1.5rem;
+}
+
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
