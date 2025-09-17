@@ -536,8 +536,6 @@ footer a:hover {
 
 
 
-
-
 /* ===== Global Styles ===== */
 body {
   font-family: 'Poppins', sans-serif;
@@ -603,9 +601,11 @@ li {
 
 .contact-hero .lead-p {
   font-size: 1.2rem;
-  color: black; /* Hero paragraph should be black */
+  color: #ffffff;
   margin-top: 10px;
 }
+
+
 
 /* ===== Contact Page Left Column (Info + Map) ===== */
 .contact-info {
@@ -700,5 +700,243 @@ li {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+/* ===== About Hero Section ===== */
+#about-hero {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#about-hero h1 {
+  color: #00d4ff;
+  font-weight: 700;
+  text-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+  animation: fadeUp 1.2s ease;
+}
+
+#about-hero p {
+  color: #f8f8f8;
+  font-size: 1.2rem;
+  animation: fadeUp 1.5s ease;
+}
+
+/* ===== About Content Section ===== */
+.about-content {
+  background: #121212;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  margin-top: -50px; /* overlaps hero for nice flow */
+  animation: fadeUp 1.2s ease;
+}
+
+.about-content h3 {
+  color: #00d4ff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.about-content p,
+.about-content ul li {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 1rem;
+  list-style: none;
+  margin-left:1px;
+}
+
+.about-content ul li::before {
+  content: "✔";
+  color: #00d4ff;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Image Styling */
+.about-content img {
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+  padding-top: 40px;
+}
+
+
+
+/* ===== Team Section ===== */
+.bg-light {
+  background: #1a1a1a !important;
+  padding: 4rem 0;
+  border-radius: 12px;
+}
+
+.bg-light h2 {
+  color: #00d4ff;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.bg-light h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #00d4ff;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.bg-light img {
+  border-radius: 50%;
+ 
+  padding: 3px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-light img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.bg-light h5 {
+  margin-top: 0.8rem;
+  color: #00d4ff;
+}
+
+.bg-light p.text-muted {
+  color: #aaa !important;
+}
+ 
+
+/* ===== Footer Update (consistent across pages) ===== */
+footer {
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  color: #ccc;
+  padding: 2.5rem 1rem;
+}
+
+footer a {
+  color: #00d4ff;
+  margin: 0 8px;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: #00fff0;
+  transform: scale(1.2);
+}
+
+/* ===== Media Queries ===== */
+
+/* Tablets (≤992px) */
+@media (max-width: 992px) {
+  #about-hero {
+    height: 60vh;
+    padding: 2rem;
+  }
+
+  #about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #about-hero p {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    padding: 2rem;
+    margin-top: -30px;
+  }
+
+  .about-content img {
+    padding-top: 20px;
+    max-width: 100%;
+  }
+}
+
+/* Mobile Devices (≤768px) */
+@media (max-width: 768px) {
+  #about-hero {
+    height: 50vh;
+    padding: 1.5rem;
+  }
+
+  #about-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  #about-hero p {
+    font-size: 0.95rem;
+  }
+
+  .about-content {
+    padding: 1.5rem;
+    margin-top: -20px;
+  }
+
+  .about-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-content p,
+  .about-content ul li {
+    font-size: 0.9rem;
+  }
+
+  .bg-light {
+    padding: 2rem 1rem;
+  }
+
+  .bg-light h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Small Mobiles (≤576px) */
+@media (max-width: 576px) {
+  #about-hero {
+    height: 45vh;
+    padding: 1rem;
+  }
+
+  #about-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  #about-hero p {
+    font-size: 0.85rem;
+  }
+
+  .about-content {
+    padding: 1rem;
+    margin-top: -15px;
+  }
+
+  .about-content img {
+    padding-top: 10px;
+  }
+
+  .bg-light {
+    padding: 1.5rem 1rem;
+  }
+
+  .bg-light h2 {
+    font-size: 1.3rem;
+  }
+
+  .bg-light h5 {
+    font-size: 1rem;
+  }
+
+  .bg-light p.text-muted {
+    font-size: 0.85rem;
   }
 }
